@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_darkColor">#ECB100</color>
+    <color name="primary_accentColor">#FFEBAE</color>
+    <color name="primary_Color">#FFBF00</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="dark_blue">#0D5195</color>
+    <color name="color_text_grey">#6F6F6F</color>
+    <color name="color_grey">#9A9A9A</color>
+    <color name="color_black">#1C1C20</color>
+    <color name="light_grey">#D9D9D9</color>
+    <color name="blue">#1D4078</color>
+    <color name="text_color">#1A407A</color>
+    <color name="text_grey_color">#696969</color>
+    <color name="text_gray">#6C6C6C</color>
+    <color name="view_gray">#1E6C6C6C</color>
+    <color name="text_red">#F10000</color>
+    <color name="text_green">#008525</color>
+    <color name="admin_text">#00733B</color>
+    <color name="seller_text">#2E6798</color>
+    <color name="status_text">#FF0000</color>
+    <color name="green">#128200</color>
+    <color name="parrot_green">#45B500</color>
+    <color name="light_green">#8B319000</color>
+    <color name="light_red">#ED7B41</color>
+    <color name="light_cream">#FDF5EA</color>
+    <color name="light_pink">#FFEAEA</color>
+    <color name="button_gray">#909090</color>
+    <color name="light_red2">#FFEAEA</color>
+    <color name="option_back">#FDF5EA</color>
+    <color name="orange">#FF9600</color>
+    <color name="search_icon">#333333</color>
+    <color name="light_blue">#EAF2FD</color>
+</resources>

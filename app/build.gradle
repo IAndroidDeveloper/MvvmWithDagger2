@@ -1,0 +1,111 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.firebase.crashlytics'
+    //id 'com.google.gms.google-services'
+}
+
+final VERSION_NAME = '1.0.0'
+final VERSION_CODE = 1
+android {
+    namespace 'com.akash.mvvmwithdagger'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.akash.mvvmwithdagger"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    flavorDimensions "default"
+
+    productFlavors {
+        uat {
+            versionCode VERSION_CODE
+            versionName VERSION_NAME
+            dimension "default"
+            buildConfigField("String", "VERSION", "\"UAT\"")
+            buildConfigField("String", "BASE_URL", "\"http://akash.in/\"")
+        }
+        prod {
+            versionCode VERSION_CODE
+            versionName VERSION_NAME
+            dimension "default"
+            buildConfigField("String", "VERSION", "\"PROD\"")
+            buildConfigField("String", "BASE_URL", "\"http://akash.in/\"")
+        }
+
+    }
+
+        buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.10.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.1.2'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.6'
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.2'
+    implementation 'com.google.dagger:dagger:2.45'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'androidx.work:work-runtime:2.8.1'
+    kapt 'com.google.dagger:dagger-compiler:2.45'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    implementation platform('com.google.firebase:firebase-bom:31.5.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    def room_version = "2.5.1"
+    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    def lifecycle_version = "2.6.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    def interceptor_version = "5.0.0-alpha.10"
+    implementation "com.squareup.okhttp3:logging-interceptor:$interceptor_version"
+
+    def glide_version = "4.15.1"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    //Circular Image View
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+}
